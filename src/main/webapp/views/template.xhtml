@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view locale="EN" contentType="text/html">
+	<h:head>
+		<title>Champion&amp;Pályázatok</title>
+		<!-- 		<h:outputStylesheet library="css" name="standard.css" /> -->
+		<link href="./resources/css/mainStyle.css" rel="stylesheet"
+			type="text/css" />
+	</h:head>
+	<h:body>
+		<form id="menuForm">
+			<p:tabMenu id="mainMenu" widgetVar="mainMenu" activeIndex="0">
+				<p:menuitem id="indexMenuItem" value="Home" url="/faces/index.xhtml" actionListener="#{templateBean.menuItemClicked}" update="@form"/>
+				<p:menuitem id="kapcsolatMenuItem" value="Kapcsolat" url="/faces/views/kapcsolat.xhtml" actionListener="#{templateBean.menuItemClicked}" />
+				<p:menuitem id="referenciakMenuItem" value="Referenciák" url="/faces/views/referenciak.xhtml" actionListener="#{templateBean.menuItemClicked}" />
+			</p:tabMenu>
+			<h1>ChampionPályázatok</h1>
+		</form>
+		<hr />
+
+		<ui:insert name="content" />
+
+	</h:body>
+</f:view>
+</html>

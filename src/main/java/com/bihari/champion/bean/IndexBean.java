@@ -32,8 +32,4 @@ public class IndexBean {
 		this.hello = hello;
 	}
 	
-	public void fakeMethod(){
-		//fakemethod git test
-	}
-	
 }
