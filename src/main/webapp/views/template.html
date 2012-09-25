@@ -7,12 +7,15 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 
-<f:view locale="#{localeBean.locale}" contentType="text/html">
+<f:view locale="EN" contentType="text/html">
 	<h:head>
-		<title>Champion and Pályázatok</title>
-		<!--   	<h:outputStylesheet library="css" name="standard.css" /> -->
+		<title>Champion&amp;Pályázatok</title>
+<!-- 		<h:outputStylesheet library="css" name="standard.css" /> -->
+		<link href="./resources/css/mainStyle.css" rel="stylesheet" type="text/css" />
 	</h:head>
 	<h:body>
+		<h1>ChampionPályázatok</h1>
+		<hr/>
 
 		<ui:insert name="content" />
 

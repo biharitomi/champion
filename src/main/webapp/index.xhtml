@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 
-<h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>ChampionPalyazatok</title>
-<!-- 	<h:outputStylesheet library="css" name="main.css"  /> -->
-	<link href="./resources/css/mainStyle.css" rel="stylesheet" type="text/css" />
-</h:head>
-
-<h:body>
-	<h1>ChampionPályázatok</h1>
-	<div>
-		<h:outputLabel value="#{indexBean.hello}"></h:outputLabel>
-	</div>
-	<div>
-		<p:calendar id="date" value="#{indexBean.date}" mode="popup"
-			showOn="focus" pattern="yyyy/MM/dd HH:mm" />	
-	</div>
-</h:body>
+<ui:composition template="/views/template.html">
+	<ui:define name="content">
+		<div>
+			<h:outputLabel value="#{indexBean.hello}"></h:outputLabel>
+		</div>
+		<div class="datePickerDiv">
+			<p:calendar id="date" value="#{indexBean.date}" mode="popup"
+				showOn="focus" pattern="yyyy/MM/dd HH:mm"  />
+		</div>
+	</ui:define>
+</ui:composition>
 </html>

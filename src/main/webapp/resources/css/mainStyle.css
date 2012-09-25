@@ -1,3 +1,10 @@
 body {
-	font-size: 12px;
+	
+}
+
+.datePickerDiv{
+	font-size: 13px;
+}
+.ui-datepicker {
+    font-size: 12px;
 }
