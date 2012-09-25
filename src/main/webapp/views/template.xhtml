@@ -15,18 +15,20 @@
 			type="text/css" />
 	</h:head>
 	<h:body>
-		<form id="menuForm">
-			<p:tabMenu id="mainMenu" widgetVar="mainMenu" activeIndex="0">
-				<p:menuitem id="indexMenuItem" value="Home" url="/faces/index.xhtml" actionListener="#{templateBean.menuItemClicked}" update="@form"/>
-				<p:menuitem id="kapcsolatMenuItem" value="Kapcsolat" url="/faces/views/kapcsolat.xhtml" actionListener="#{templateBean.menuItemClicked}" />
-				<p:menuitem id="referenciakMenuItem" value="Referenciák" url="/faces/views/referenciak.xhtml" actionListener="#{templateBean.menuItemClicked}" />
+		<h:form id="menuForm">
+			<p:tabMenu id="mainMenu">
+				<p:menuitem id="indexMenuItem" value="Home" url="/faces/index.xhtml" ajax="false" async="false" update=":dataForm"/>
+				<p:menuitem id="kapcsolatMenuItem" value="Kapcsolat" url="/faces/views/kapcsolat.xhtml" ajax="false" async="false" update=":dataForm"/>
+				<p:menuitem id="referenciakMenuItem" value="Referenciák" url="/faces/views/referenciak.xhtml" ajax="false" async="false" update=":dataForm"/>
 			</p:tabMenu>
+			<p:commandButton value="ok" actionListener="#{templateBean.menuItemClicked}"></p:commandButton>
 			<h1>ChampionPályázatok</h1>
-		</form>
+		</h:form>
+		
 		<hr />
-
-		<ui:insert name="content" />
-
+		<h:form id="dataForm">
+			<ui:insert name="content" />
+		</h:form>
 	</h:body>
 </f:view>
 </html>

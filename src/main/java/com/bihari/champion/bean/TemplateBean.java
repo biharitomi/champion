@@ -15,7 +15,7 @@ public class TemplateBean {
 		logger.info("MENUITEM CLICKED!!!");
 	}
 	
-	public void menuItemClicked(ActionEvent event){
+	public void menuItemClicked(){
 		logger.info("MENUITEM CLICKED!!!");
 		System.out.println("AADSF");
 		
