@@ -7,7 +7,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 
-<f:view locale="EN" contentType="text/html">
+<f:view  contentType="text/html"> <!-- locale="EN" -->
 	<h:head>
 		<title>Champion&amp;Pályázatok</title>
 		<!-- 		<h:outputStylesheet library="css" name="standard.css" /> -->
@@ -16,15 +16,12 @@
 	</h:head>
 	<h:body>
 		<h:form id="menuForm">
-			<p:tabMenu id="mainMenu">
-				<p:menuitem id="indexMenuItem" value="Home" url="/faces/index.xhtml" ajax="false" async="false" update=":dataForm"/>
-				<p:menuitem id="kapcsolatMenuItem" value="Kapcsolat" url="/faces/views/kapcsolat.xhtml" ajax="false" async="false" update=":dataForm"/>
-				<p:menuitem id="referenciakMenuItem" value="Referenciák" url="/faces/views/referenciak.xhtml" ajax="false" async="false" update=":dataForm"/>
+			<p:tabMenu id="mainMenu" activeIndex="#{templateBean.tabMenuId}">
+				<p:menuitem id="indexMenuItem" value="Home" ajax="false" async="false" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}"/>
+				<p:menuitem id="referenciakMenuItem" value="Referenciák"  ajax="false" async="false" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}"/>
+				<p:menuitem id="kapcsolatMenuItem" value="Kapcsolat" ajax="false" async="false" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}"/>
 			</p:tabMenu>
-			<p:commandButton value="ok" actionListener="#{templateBean.menuItemClicked}"></p:commandButton>
 			<h1>ChampionPályázatok</h1>
-			
-			<p:tabMenu model="#{templateBean.menuModel}"></p:tabMenu>
 		</h:form>
 		
 		<hr />

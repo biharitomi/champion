@@ -1,78 +1,60 @@
 package com.bihari.champion.bean;
 
 
-import javax.annotation.PostConstruct;
-import javax.el.ELContext;
-import javax.el.ExpressionFactory;
-import javax.faces.application.Application;
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
-import javax.faces.context.FacesContext;
+import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
 
-import org.primefaces.component.menuitem.MenuItem;
-import org.primefaces.event.TabChangeEvent;
-import org.primefaces.model.DefaultMenuModel;
-import org.primefaces.model.MenuModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@SessionScoped
 @ManagedBean(name="templateBean")
-public class TemplateBean {
+public class TemplateBean implements Serializable {
+	private static final String KAPCSOLAT_MENU_ITEM_ID = "kapcsolatMenuItem";
+	private static final String REFERENCIAK_MENU_ITEM_ID = "referenciakMenuItem";
+	private static final String INDEX_MENU_ITEM_ID = "indexMenuItem";
+	private static final long serialVersionUID = 780441307539269686L;
 	private static final Logger logger = LoggerFactory.getLogger(TemplateBean.class);
 	
-	private MenuModel menuModel;
+	private int tabMenuId=0;
+	private String returnUrl="";
 	
-	public MenuModel getMenuModel() {
-		return menuModel;
+	public void setTabMenuId(int tabMenuId) {
+		this.tabMenuId = tabMenuId;
 	}
 
-	public void onChange(TabChangeEvent event){
-		logger.info("MENUITEM CLICKED!!!");
+	public int getTabMenuId() {
+		return tabMenuId;
 	}
 	
-	public void menuItemClicked(){
-		logger.info("MENUITEM CLICKED!!!");
-		System.out.println("AADSF");
-		
+	public TemplateBean(){
+		this.tabMenuId=0;
 	}
-	
-	public String menuItemClicked2(){
-		logger.info("DYNAMIC MENUITEM CLICKED!!!");
-		for(Object o:FacesContext.getCurrentInstance().getAttributes().keySet()){
-			logger.info("ATTRIBUTE: "+o.toString());
+
+	public void menuItemClicked(ActionEvent event){
+		logger.info("Menu item clicked with id: "+event.getComponent().getId());
+		if(event.getComponent().getId().equals(INDEX_MENU_ITEM_ID)){
+			this.tabMenuId=0;
+			this.returnUrl="/faces/index";
 		}
-		return "/views/kapcsolat.xhtml";
+		else if(event.getComponent().getId().equals(REFERENCIAK_MENU_ITEM_ID)){
+			this.tabMenuId=1;
+			this.returnUrl="/faces/views/referenciak";
+		}
+		else if(event.getComponent().getId().equals(KAPCSOLAT_MENU_ITEM_ID)){
+			this.tabMenuId=2;
+			this.returnUrl="/faces/views/kapcsolat";
+		}
+		else{
+			this.returnUrl="/faces/index";
+		}
 	}
 	
-	
-	@PostConstruct
-	private void init(){
-		FacesContext facesContext = FacesContext.getCurrentInstance();
-        Application application = facesContext.getApplication();
-        ExpressionFactory expressionFactory = application.getExpressionFactory();
-        ELContext elContext = facesContext.getELContext();
-        
-		menuModel=new DefaultMenuModel();
-		
-		MenuItem item;
-		
-		item=new MenuItem();
-		item.setId("xxx1");
-		item.setValueExpression("value", expressionFactory.createValueExpression(elContext, "Home", String.class));
-        item.setActionExpression(expressionFactory.createMethodExpression(elContext, "#{templateBean.menuItemClicked2}", String.class, new Class[0]));
-        item.setAjax(false);
-        item.setAsync(false);
-        item.setUpdate(":dataForm");
-        menuModel.addMenuItem(item);
-        
-        item=new MenuItem();
-		item.setId("xxx2");
-		item.setValueExpression("value", expressionFactory.createValueExpression(elContext, "Referenciák", String.class));
-        item.setActionExpression(expressionFactory.createMethodExpression(elContext, "#{templateBean.menuItemClicked2}", String.class, new Class[0]));
-        
-        item.setAjax(false);
-        item.setAsync(false);
-        item.setUpdate(":dataForm");
-        menuModel.addMenuItem(item);
+	public String returnAction(){
+		return returnUrl;
 	}
+	
 }

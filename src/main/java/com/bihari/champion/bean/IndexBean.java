@@ -31,5 +31,6 @@ public class IndexBean {
 	public void setHello(String hello) {
 		this.hello = hello;
 	}
+
 	
 }
