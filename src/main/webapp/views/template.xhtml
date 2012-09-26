@@ -17,9 +17,9 @@
 	<h:body>
 		<h:form id="menuForm">
 			<p:tabMenu id="mainMenu" activeIndex="#{templateBean.tabMenuId}">
-				<p:menuitem id="indexMenuItem" value="Home" ajax="false" async="false" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}"/>
-				<p:menuitem id="referenciakMenuItem" value="Referenciák"  ajax="false" async="false" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}"/>
-				<p:menuitem id="kapcsolatMenuItem" value="Kapcsolat" ajax="false" async="false" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}"/>
+				<p:menuitem id="indexMenuItem" value="Szolgáltatásaink" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
+				<p:menuitem id="referenciakMenuItem" value="Referenciák"  update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
+				<p:menuitem id="kapcsolatMenuItem" value="Kapcsolat" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
 			</p:tabMenu>
 			<h1>ChampionPályázatok</h1>
 		</h:form>

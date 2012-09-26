@@ -4,13 +4,13 @@ package com.bihari.champion.bean;
 import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 import javax.faces.event.ActionEvent;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@SessionScoped
+@RequestScoped
 @ManagedBean(name="templateBean")
 public class TemplateBean implements Serializable {
 	private static final String KAPCSOLAT_MENU_ITEM_ID = "kapcsolatMenuItem";
@@ -38,18 +38,18 @@ public class TemplateBean implements Serializable {
 		logger.info("Menu item clicked with id: "+event.getComponent().getId());
 		if(event.getComponent().getId().equals(INDEX_MENU_ITEM_ID)){
 			this.tabMenuId=0;
-			this.returnUrl="/faces/index";
+			this.returnUrl="/index";
 		}
 		else if(event.getComponent().getId().equals(REFERENCIAK_MENU_ITEM_ID)){
 			this.tabMenuId=1;
-			this.returnUrl="/faces/views/referenciak";
+			this.returnUrl="/views/referenciak";
 		}
 		else if(event.getComponent().getId().equals(KAPCSOLAT_MENU_ITEM_ID)){
 			this.tabMenuId=2;
-			this.returnUrl="/faces/views/kapcsolat";
+			this.returnUrl="/views/kapcsolat";
 		}
 		else{
-			this.returnUrl="/faces/index";
+			this.returnUrl="/index";
 		}
 	}
 	

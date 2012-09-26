@@ -3,6 +3,7 @@ package com.bihari.champion.bean;
 import java.util.Date;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.event.ActionEvent;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,5 +33,7 @@ public class IndexBean {
 		this.hello = hello;
 	}
 
-	
+	public void probaActionListener(ActionEvent event){
+		logger.info("Activator object id: "+event.getComponent().getId());
+	}
 }
