@@ -4,18 +4,24 @@ package com.bihari.champion.bean;
 import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@RequestScoped
+@SessionScoped
 @ManagedBean(name="templateBean")
 public class TemplateBean implements Serializable {
+	
+	private static final String TEVEKENYSEGEK_MENU_ITEM = "tevekenysegekMenuItem";
+	private static final String PARTNEREINK_MENU_ITEM = "partnereinkMenuItem";
+	private static final String CEGUNKROL_MENU_ITEM = "cegunkrolMenuItem";
+	private static final String DIJAK_MENU_ITEM = "dijakMenuItem";
 	private static final String KAPCSOLAT_MENU_ITEM_ID = "kapcsolatMenuItem";
 	private static final String REFERENCIAK_MENU_ITEM_ID = "referenciakMenuItem";
 	private static final String INDEX_MENU_ITEM_ID = "indexMenuItem";
+	
 	private static final long serialVersionUID = 780441307539269686L;
 	private static final Logger logger = LoggerFactory.getLogger(TemplateBean.class);
 	
@@ -35,7 +41,7 @@ public class TemplateBean implements Serializable {
 	}
 
 	public void menuItemClicked(ActionEvent event){
-		logger.info("Menu item clicked with id: "+event.getComponent().getId());
+		logger.info("MainMenu item clicked with id: "+event.getComponent().getId());
 		if(event.getComponent().getId().equals(INDEX_MENU_ITEM_ID)){
 			this.tabMenuId=0;
 			this.returnUrl="/index";
@@ -48,13 +54,29 @@ public class TemplateBean implements Serializable {
 			this.tabMenuId=2;
 			this.returnUrl="/views/kapcsolat";
 		}
+		else if(event.getComponent().getId().equals(DIJAK_MENU_ITEM)){
+			this.tabMenuId=3;
+			this.returnUrl="/views/dijak";
+		}
+		else if(event.getComponent().getId().equals(CEGUNKROL_MENU_ITEM)){
+			this.tabMenuId=4;
+			this.returnUrl="/views/cegunkrol";
+		}
+		else if(event.getComponent().getId().equals(PARTNEREINK_MENU_ITEM)){
+			this.tabMenuId=5;
+			this.returnUrl="/views/partnereink";
+		}
+		else if(event.getComponent().getId().equals(TEVEKENYSEGEK_MENU_ITEM)){
+			this.tabMenuId=6;
+			this.returnUrl="/views/tevekenysegek";
+		}
 		else{
 			this.returnUrl="/index";
 		}
 	}
 	
 	public String returnAction(){
-		return returnUrl;
+		return returnUrl+"?faces-redirect=true";
 	}
 	
 }

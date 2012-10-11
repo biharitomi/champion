@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:c="http://java.sun.com/jstl/core"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -10,9 +9,9 @@
 <f:view  contentType="text/html"> <!-- locale="EN" -->
 	<h:head>
 		<title>Champion&amp;Pályázatok</title>
-		<!-- 		<h:outputStylesheet library="css" name="standard.css" /> -->
-		<link href="./resources/css/mainStyle.css" rel="stylesheet"
-			type="text/css" />
+				<h:outputStylesheet library="css" name="mainStyle.css" />
+<!-- 		<link href="./resources/css/mainStyle.css" rel="stylesheet" -->
+<!-- 			type="text/css" /> -->
 	</h:head>
 	<h:body>
 		<h:form id="menuForm">
@@ -20,13 +19,19 @@
 				<p:menuitem id="indexMenuItem" value="Szolgáltatásaink" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
 				<p:menuitem id="referenciakMenuItem" value="Referenciák"  update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
 				<p:menuitem id="kapcsolatMenuItem" value="Kapcsolat" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
+				<p:menuitem id="dijakMenuItem" value="Díjak" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
+				<p:menuitem id="cegunkrolMenuItem" value="Cégünkről" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
+				<p:menuitem id="partnereinkMenuItem" value="Partnereink" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
+				<p:menuitem id="tevekenysegekMenuItem" value="Tevékenységek" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
 			</p:tabMenu>
 			<h1>ChampionPályázatok</h1>
 		</h:form>
 		
 		<hr />
 		<h:form id="dataForm">
-			<ui:insert name="content" />
+			<p:panel>
+				<ui:insert name="content" />
+			</p:panel>
 		</h:form>
 	</h:body>
 </f:view>

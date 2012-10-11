@@ -8,8 +8,25 @@
 
 <ui:composition template="/views/template.xhtml">
 	<ui:define name="content">
-		<h1>Kapcsolatok</h1>
-		<h2>Lorem ipsum</h2>
+		<f:facet name="header">
+			<h:outputText value="#{messages.kapcsolat_header}"></h:outputText>
+		</f:facet>
+		
+		<p:panelGrid columns="2" style="margin: 15px; " >
+		
+		<h:outputText value="Cím"></h:outputText>
+		<h:outputText value="6000. Kecskemét, Áprily L. u. 2. 2/5."></h:outputText>
+		
+		<h:outputText value="Telefon/Fax"></h:outputText>
+		<h:outputText value="+36-76/611-191"></h:outputText>
+		
+		<h:outputText value="Mobil"></h:outputText>
+		<h:outputText value="+36-20/466-5650"></h:outputText>
+		
+		<h:outputText value="Email"></h:outputText>
+		<h:outputText value="gillym@t-online.hu"></h:outputText>
+		
+		</p:panelGrid>
 	</ui:define>
 </ui:composition>
 </html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/views/template.xhtml">
+	<ui:define name="content">
+		<f:facet name="header">#{messages.tevekenysegek_header}</f:facet>
+		<p:accordionPanel>
+			<p:tab title="&nbsp;">
+				<p>#{messages.tevekenysegek_intro}</p>
+			</p:tab>
+			<p:tab title="#{messages.tevekenysegek_tittle_palyazatiras}">
+				<p>#{messages.tevekenysegek_palyazatiras_1}</p>
+					<ul>
+						<li>A feltárt probléma, az igények elemzése az adott vállalkozásnál</li>
+						<li>Stratégia alkotás</li>
+						<li>A probléma megoldásához, a beruházási tervekhez szükséges pályázati forrás felkutatása pályázatfigyelés</li>
+						<li>Konzultációk a kiírókkal</li>
+						<li>Pályázatírás</li>
+						<li>Hiánypótlások</li>
+						<li>Pályázat nyomon követése</li>
+						<li>Igény esetén monitoring</li>
+					</ul>
+				<p>#{messages.tevekenysegek_palyazatiras_2}</p>
+			</p:tab>
+			
+			
+			<p:tab title="#{messages.tevekenysegek_tittle_tanacsadas}">
+				<h2>Tanácsadás</h2>
+				<p>#{messages.tevekenysegek_tanacsadas}</p>
+			</p:tab>
+		</p:accordionPanel>
+	</ui:define>
+</ui:composition>
+</html>

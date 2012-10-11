@@ -8,14 +8,13 @@
 
 <ui:composition template="/views/template.xhtml">
 	<ui:define name="content">
-		<div>
-			<h:outputLabel value="#{indexBean.hello}"></h:outputLabel>
-		</div>
-		<div class="datePickerDiv">
-			<p:calendar id="date" value="#{indexBean.date}" mode="popup"
-				showOn="focus" pattern="yyyy/MM/dd HH:mm"  />
-		</div>
-		<p:commandButton id="probaButton" actionListener="#{indexBean.probaActionListener}" value="proba"></p:commandButton>
+		<f:facet name="header">#{messages.szolgaltatasaink_cim}</f:facet>
+		<p>#{messages.szolgaltatasaink_1}</p>
+		<p>#{messages.szolgaltatasaink_2} <b>#{messages.szolgaltatasaink_2_1}</b></p>
+		<p>#{messages.szolgaltatasaink_3}</p>
+		<p>#{messages.szolgaltatasaink_4}</p>
+		<p>#{messages.szolgaltatasaink_5}</p>
+		<p>#{messages.szolgaltatasaink_6}</p>
 	</ui:define>
 </ui:composition>
 </html>
