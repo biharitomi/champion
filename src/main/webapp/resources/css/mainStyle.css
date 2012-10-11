@@ -12,11 +12,10 @@ p,ul {
 }
 
 #widget-header {
-	text-align: center; 
-	font-family : sans-serif;
+	text-align: center;
+	font: bold 230%/100% "Lucida Grande";
+	text-transform:capitalize;
 	padding: 10px;
-	font-size: 30px;
-	font-family: fantasy;
 	background:#c4c4c4 linear-gradient(top, rgba(255,255,255,0.8), rgba(255,255,255,0));
 	background:#c4c4c4 -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.8)), to(rgba(255,255,255,0)));
 	background:#c4c4c4 -moz-linear-gradient(top, rgba(255,255,255,0.8), rgba(255,255,255,0));
