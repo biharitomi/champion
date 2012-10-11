@@ -24,10 +24,10 @@
 				<p:menuitem id="partnereinkMenuItem" value="Partnereink" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
 				<p:menuitem id="tevekenysegekMenuItem" value="Tevékenységek" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
 			</p:tabMenu>
-			<h1>ChampionPályázatok</h1>
+			<div id="widget-header">
+				Champion&amp;Pályázatok
+			</div>
 		</h:form>
-		
-		<hr />
 		<h:form id="dataForm">
 			<p:panel>
 				<ui:insert name="content" />
