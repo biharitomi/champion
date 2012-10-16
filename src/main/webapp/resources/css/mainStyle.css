@@ -1,5 +1,5 @@
 body {
-	font-size: 14px;
+	font-size: 12px;
 	width: 1100px;
 }
 
@@ -19,10 +19,4 @@ p,ul {
 /* 	background:#c4c4c4 linear-gradient(top, rgba(255,255,255,0.8), rgba(255,255,255,0)); */
 /* 	background:#c4c4c4 -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.8)), to(rgba(255,255,255,0))); */
 /* 	background:#c4c4c4 -moz-linear-gradient(top, rgba(255,255,255,0.8), rgba(255,255,255,0)); */
-}
-
-.ui-accordion a{
-	display: block;
-	font-size: 1em;
-	padding: 0px;
 }
