@@ -15,13 +15,13 @@
 	<h:body>
 		<h:form id="menuForm">
 			<p:tabMenu id="mainMenu" activeIndex="#{templateBean.tabMenuId}">
-				<p:menuitem id="indexMenuItem" value="Szolgáltatásaink" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
-				<p:menuitem id="referenciakMenuItem" value="Referenciák"  update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
-				<p:menuitem id="kapcsolatMenuItem" value="Kapcsolat" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
-				<p:menuitem id="dijakMenuItem" value="Díjak" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
-				<p:menuitem id="cegunkrolMenuItem" value="Cégünkről" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
-				<p:menuitem id="partnereinkMenuItem" value="Partnereink" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
-				<p:menuitem id="tevekenysegekMenuItem" value="Tevékenységek" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="false"/>
+				<p:menuitem id="indexMenuItem" value="Szolgáltatásaink" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
+				<p:menuitem id="referenciakMenuItem" value="Referenciák"  update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
+				<p:menuitem id="kapcsolatMenuItem" value="Kapcsolat" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
+				<p:menuitem id="dijakMenuItem" value="Díjak" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
+				<p:menuitem id="cegunkrolMenuItem" value="Cégünkről" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
+				<p:menuitem id="partnereinkMenuItem" value="Partnereink" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
+				<p:menuitem id="tevekenysegekMenuItem" value="Tevékenységek" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
 			</p:tabMenu>
 			<div class="ui-widget-header widget-header">
 				Champion&amp;Pályázatok
