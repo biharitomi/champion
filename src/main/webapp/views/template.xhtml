@@ -13,25 +13,27 @@
 <!-- 				<h:outputScript name="jquery-1.8.2.js" library="js"/> -->
 	</h:head>
 	<h:body>
-		<h:form id="menuForm">
-			<p:tabMenu id="mainMenu" activeIndex="#{templateBean.tabMenuId}">
-				<p:menuitem id="indexMenuItem" value="Szolgáltatásaink" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
-				<p:menuitem id="referenciakMenuItem" value="Referenciák"  update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
-				<p:menuitem id="kapcsolatMenuItem" value="Kapcsolat" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
-				<p:menuitem id="dijakMenuItem" value="Díjak" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
-				<p:menuitem id="cegunkrolMenuItem" value="Cégünkről" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
-				<p:menuitem id="partnereinkMenuItem" value="Partnereink" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
-				<p:menuitem id="tevekenysegekMenuItem" value="Tevékenységek" update=":dataForm" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
-			</p:tabMenu>
-			<div class="ui-widget-header widget-header">
-				Champion&amp;Pályázatok
-			</div>
-		</h:form>
-		<h:form id="dataForm">
-			<p:panel>
-				<ui:insert name="content" />
-			</p:panel>
-		</h:form>
+		<div id="main_container">
+			<h:form id="menuForm">
+				<p:tabMenu id="mainMenu" activeIndex="#{templateBean.tabMenuId}">
+					<p:menuitem id="indexMenuItem" value="Szolgáltatásaink" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
+					<p:menuitem id="referenciakMenuItem" value="Referenciák"  update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
+					<p:menuitem id="kapcsolatMenuItem" value="Kapcsolat" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
+					<p:menuitem id="dijakMenuItem" value="Díjak" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
+					<p:menuitem id="cegunkrolMenuItem" value="Cégünkről" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
+					<p:menuitem id="partnereinkMenuItem" value="Partnereink" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
+					<p:menuitem id="tevekenysegekMenuItem" value="Tevékenységek" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
+				</p:tabMenu>
+				<div class="ui-widget-header widget-header">
+					Champion&amp;Pályázatok
+				</div>
+			</h:form>
+			<h:form id="dataForm">
+				<p:panel id="data">
+					<ui:insert name="content" />
+				</p:panel>
+			</h:form>
+		</div>
 	</h:body>
 </f:view>
 </html>
