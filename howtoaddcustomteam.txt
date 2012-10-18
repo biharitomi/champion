@@ -1,6 +1,6 @@
 mvn install:install-file -Dfile=primefaces-championtheme.jar -DgroupId=com.bihari.themes -DartifactId=championtheme -Dversion=1.0.0 -Dpackaging=jar
 
-<dependency>
+		<dependency>
 			<groupId>com.bihari.themes</groupId>
 			<artifactId>championtheme</artifactId>
 			<version>1.0.0</version> 
