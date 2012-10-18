@@ -8,7 +8,9 @@ body {
 	margin: auto;
 }
 
-/* primefaces-es css option felülírása esetén !important, hogy az enyém érvényesüljön */
+/* primefaces-es css option felülírása esetén !important, hogy az enyém érvényesüljön 
+	primefaces overlay panel to login and register
+*/
 p,ul {
 	font-size: 12px;
 }
