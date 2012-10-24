@@ -5,9 +5,21 @@
 	<artifactId>champion</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>champion Maven Webapp</name>
+	<name>champion</name>
 	<url>http://maven.apache.org</url>
-
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 	<repositories>
 		<repository>
 			<id>prime-repo</id>
@@ -25,11 +37,11 @@
 			<version>3.4</version>
 		</dependency>
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.primefaces.themes</groupId> -->
-<!-- 			<artifactId>afterdark</artifactId> -->
-<!-- 			<version>1.0.8</version> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.primefaces.themes</groupId> -->
+		<!-- <artifactId>afterdark</artifactId> -->
+		<!-- <version>1.0.8</version> -->
+		<!-- </dependency> -->
 
 		<dependency>
 			<groupId>com.bihari.themes</groupId>
@@ -114,7 +126,4 @@
 
 
 	</dependencies>
-	<build>
-		<finalName>champion</finalName>
-	</build>
 </project>

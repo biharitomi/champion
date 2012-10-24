@@ -4,7 +4,7 @@ body {
 
 #main_container{
 	width: 1100px;
-	height: auto;
+	height: 800px;
 	margin: auto;
 }
 
@@ -58,3 +58,15 @@ p,ul {
 	/* W3C Markup, IE10 Release Preview */
 	background-image: linear-gradient(to right, #FFFFFF 0%, #1F393D 100%);
 }
+
+.justified-text{
+	text-align: justify;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+/* tbody tr td:hover{ */
+/* 	-webkit-transform: scale(1.2); */
+/* 	-moz-transform: scale(1.2); */
+/* 	transform: scale(1.2); */
+/* } */
