@@ -8,8 +8,53 @@
 
 <ui:composition template="/views/template.xhtml">
 	<ui:define name="content">
-		<h1>Díjak</h1>
-		<p:calendar id="date" mode="popup" showOn="focus" pattern="yyyy/MM/dd HH:mm" />
+		<f:facet name="header">#{messages.dijak_header}</f:facet>
+		<div class="justified-text">
+			<p>#{messages.dijak_1_1} <b>#{messages.dijak_1_2_bold}</b> #{messages.dijak_1_3}</p>
+			<h4>#{messages.dijak_subheader}</h4>
+			<p><b>#{messages.dijak_2_1_bold}</b> <br/>#{messages.dijak_2_2}</p>
+			<p><b>#{messages.dijak_3_1_bold}</b><br/>#{messages.dijak_3_2}</p>
+			<p><b>#{messages.dijak_4_1_bold}</b><br/>#{messages.dijak_4_2}</p>
+			<p:panelGrid columns="2" id="dijak-tablazat">
+				<f:facet name="header">#{messages.dijak_5_1_bold}</f:facet>
+				
+				<h:outputLabel>1-2 #{messages.dijak_5_2_1}</h:outputLabel>
+				<h:outputLabel>150.000,-Ft #{messages.dijak_5_2_2}</h:outputLabel>
+				
+				<h:outputLabel>2-4 #{messages.dijak_5_2_1}</h:outputLabel>
+				<h:outputLabel>8 % #{messages.dijak_5_2_2}</h:outputLabel>
+				
+				<h:outputLabel>4-5 #{messages.dijak_5_2_1}</h:outputLabel>
+				<h:outputLabel>8-7 % #{messages.dijak_5_2_2}</h:outputLabel>
+				
+				<h:outputLabel>5-10 #{messages.dijak_5_2_1}</h:outputLabel>
+				<h:outputLabel>7-6 % #{messages.dijak_5_2_2}</h:outputLabel>
+				
+				<h:outputLabel>10-20 #{messages.dijak_5_2_1}</h:outputLabel>
+				<h:outputLabel>6-5 % #{messages.dijak_5_2_2}</h:outputLabel>
+				
+				<h:outputLabel>20-50 #{messages.dijak_5_2_1}</h:outputLabel>
+				<h:outputLabel>5-4 % #{messages.dijak_5_2_2}</h:outputLabel>
+				
+				<h:outputLabel>50-75 #{messages.dijak_5_2_1}</h:outputLabel>
+				<h:outputLabel>4-3 % #{messages.dijak_5_2_2}</h:outputLabel>
+				
+				<h:outputLabel>75-250 #{messages.dijak_5_2_1}</h:outputLabel>
+				<h:outputLabel>3-2 % #{messages.dijak_5_2_2}</h:outputLabel>
+				
+				<h:outputLabel>250-500 #{messages.dijak_5_2_1}</h:outputLabel>
+				<h:outputLabel>2 % #{messages.dijak_5_2_2}</h:outputLabel>
+				
+				<h:outputLabel>500 #{messages.dijak_5_2_3}</h:outputLabel>
+				<h:outputLabel>maximum 1 % #{messages.dijak_5_2_2}</h:outputLabel>
+			</p:panelGrid>
+			<p>#{messages.dijak_6}</p>
+			<p><b>#{messages.dijak_7_1_bold}</b> #{messages.dijak_7_2}</p>
+			<p>#{messages.dijak_8_1}<br/>#{messages.dijak_8_2}<br/>#{messages.dijak_8_3}</p>
+			<p>#{messages.dijak_9}</p>
+			<p><b>#{messages.dijak_10_bold}</b></p>
+			<p>#{messages.dijak_11}</p>
+		</div>
 	</ui:define>
 </ui:composition>
 </html>
