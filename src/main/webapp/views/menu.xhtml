@@ -7,37 +7,41 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <ui:composition>
-		<p:tabMenu id="mainMenu" activeIndex="#{templateBean.tabMenuId}">
-					<p:menuitem id="indexMenuItem" value="Szolgáltatásaink" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
-					<p:menuitem id="referenciakMenuItem" value="Referenciák"  update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
-					<p:menuitem id="kapcsolatMenuItem" value="Kapcsolat" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
-					<p:menuitem id="dijakMenuItem" value="Díjak" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
-					<p:menuitem id="cegunkrolMenuItem" value="Cégünkről" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
-					<p:menuitem id="partnereinkMenuItem" value="Partnereink" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
-					<p:menuitem id="tevekenysegekMenuItem" value="Tevékenységek" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
-				</p:tabMenu>
-				<p:commandButton id="login" value="Bejelentkezés" styleClass="mainMenuItem" rendered="true"/>
-				<p:commandButton id="logout" value="Kijelentkezés" styleClass="mainMenuItem" rendered="true"/>
-				<p:overlayPanel for="login">
-					<p:panelGrid columns="2" style="margin: 15px; " >
-					<f:facet name="header">
-						<h:outputText value="Login"/>
-					</f:facet>
-					
-					<h:outputText value="Username:"/>
-					<p:inputText id="userLogin" label="Username" maxlength="20" />
-					
-					<h:outputText value="Password:"/>
-					<p:password id="passwordLogin" label="Password" maxlength="20"/>
-					
-					<f:facet name="footer">
-						<p:commandButton  value="OK" ajax="false"/>
-						<p:commandButton value="Registration" ></p:commandButton>
-					</f:facet>
-				</p:panelGrid>
-				</p:overlayPanel>
-				<div class="ui-widget-header widget-header">
-					Champion&amp;Pályázatok
-				</div>
+		<div id="ui-login-mainMenu">
+			<p:tabMenu id="mainMenu" activeIndex="#{templateBean.tabMenuId}">
+						<p:menuitem id="indexMenuItem" value="Szolgáltatásaink" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
+						<p:menuitem id="referenciakMenuItem" value="Referenciák"  update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
+						<p:menuitem id="kapcsolatMenuItem" value="Kapcsolat" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
+						<p:menuitem id="dijakMenuItem" value="Díjak" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
+						<p:menuitem id="cegunkrolMenuItem" value="Cégünkről" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
+						<p:menuitem id="partnereinkMenuItem" value="Partnereink" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
+						<p:menuitem id="tevekenysegekMenuItem" value="Tevékenységek" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
+			</p:tabMenu>
+		</div>
+		<div id="ui-login-group" class="ui-widget ui-widget-content ui-corner-all ui-widget-header">
+			<p:commandButton id="login" value="Bejelentkezés" styleClass="formButtons" rendered="true"/>
+			<p:commandButton id="logout" value="Kijelentkezés" styleClass="formButtons" rendered="false"/>
+			<p:overlayPanel for="login">
+				<p:panelGrid columns="2" style="margin: 15px; " >
+				<f:facet name="header">
+					<h:outputText value="Login"/>
+				</f:facet>
+				
+				<h:outputText value="Username:"/>
+				<p:inputText id="userLogin" label="Username" maxlength="20" />
+				
+				<h:outputText value="Password:"/>
+				<p:password id="passwordLogin" label="Password" maxlength="20"/>
+				
+				<f:facet name="footer">
+					<p:commandButton  value="OK" ajax="false" styleClass="formButtons"/>
+					<p:commandButton value="Registration" styleClass="formButtons"></p:commandButton>
+				</f:facet>
+			</p:panelGrid>
+			</p:overlayPanel>
+		</div>
+		<div class="ui-widget-header widget-header">
+			Champion&amp;Pályázatok
+		</div>
 </ui:composition>
 </html>		
