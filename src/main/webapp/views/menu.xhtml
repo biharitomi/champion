@@ -7,6 +7,7 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <ui:composition>
+	<div id="ui-widget-menus">
 		<div id="ui-login-mainMenu">
 			<p:tabMenu id="mainMenu" activeIndex="#{templateBean.tabMenuId}">
 						<p:menuitem id="indexMenuItem" value="Szolgáltatásaink" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" />
@@ -18,7 +19,7 @@
 						<p:menuitem id="tevekenysegekMenuItem" value="Tevékenységek" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" />
 			</p:tabMenu>
 		</div>
-		<div id="ui-login-group" class="ui-widget ui-widget-content ui-corner-all ui-widget-header">
+		<div id="ui-login-group" class="ui-corner-all">
 			<p:commandButton id="login" value="Bejelentkezés" styleClass="formButtons" rendered="true"/>
 			<p:commandButton id="logout" value="Kijelentkezés" styleClass="formButtons" rendered="false"/>
 			
@@ -41,14 +42,14 @@
 			</p:panelGrid>
 			</p:overlayPanel>
 			
-			<p:dialog widgetVar="registrationDialog" modal="true">
+			<p:dialog widgetVar="registrationDialog" draggable="false"  modal="true" resizable="false" closable="false">
+				<f:facet name="header"><h:outputText value="Registration"/></f:facet>
 				<p:panelGrid columns="2" style="margin: 15px; " >
-					<f:facet name="header">
-						<h:outputText value="Login"/>
-					</f:facet>
-					
 					<h:outputText value="Username:"/>
-					<p:inputText id="userReg" label="Username" maxlength="20" />
+					<p:inputText id="userReg" label="Username" maxlength="20" title="Username"/>
+					
+					<h:outputText value="Full name:"/>
+					<p:inputText id="fullNameReg" label="Full name" maxlength="20" />
 					
 					<h:outputText value="Email"/>
 					<p:inputText id="emailReg" validatorMessage="Email is not valid!" maxlength="30">
@@ -58,14 +59,19 @@
 					<h:outputText value="Password:"/>
 					<p:password id="passwordReg" label="Password" maxlength="20"/>
 					
+					<h:outputText value="Re-Password:"/>
+					<p:password id="re_passwordReg" label="Re-Password" maxlength="20"/>
+					
 					<f:facet name="footer">
 						<p:commandButton  value="Register" ajax="false" styleClass="formButtons"/>
+						<p:commandButton  value="Cancel" ajax="false" styleClass="formButtons" oncomplete="registrationDialog.hide()"/>
 					</f:facet>
 				</p:panelGrid>
 			</p:dialog>
 		</div>
-		<div class="ui-widget-header widget-header">
-			Champion&amp;Pályázatok
-		</div>
+	</div>
+	<div class="ui-widget-header widget-header">
+		Champion&amp;Pályázatok
+	</div>
 </ui:composition>
 </html>		
