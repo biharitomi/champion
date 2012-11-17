@@ -9,9 +9,12 @@
 <ui:composition template="/views/template.xhtml">
 	<ui:define name="content">
 		<f:facet name="header">#{messages.tevekenysegek_header}</f:facet>
+		
+		<p>#{messages.tevekenysegek_intro}</p>
+		
 		<p:accordionPanel>
-			<p:tab title="&nbsp;">
-				<p>#{messages.tevekenysegek_intro}</p>
+			<p:tab title="#{messages.tevekenysegek_tittle_tanacsadas}">
+				<p>#{messages.tevekenysegek_tanacsadas}</p>
 			</p:tab>
 			<p:tab title="#{messages.tevekenysegek_tittle_palyazatiras}">
 				<p>#{messages.tevekenysegek_palyazatiras_1}</p>
@@ -26,11 +29,6 @@
 						<li>Igény esetén monitoring</li>
 					</ul>
 				<p>#{messages.tevekenysegek_palyazatiras_2}</p>
-			</p:tab>
-			
-			
-			<p:tab title="#{messages.tevekenysegek_tittle_tanacsadas}">
-				<p>#{messages.tevekenysegek_tanacsadas}</p>
 			</p:tab>
 		</p:accordionPanel>
 	</ui:define>

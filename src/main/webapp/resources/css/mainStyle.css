@@ -54,18 +54,13 @@ p,ul {
 }
 
 .ui-tabmenu {
-	background: #F6A828
-		url("/champion/faces/javax.faces.resource/images/ui-bg_gloss-wave_35_f6a828_500x100.png?ln=primefaces-championtheme")
-		50% 50% repeat-x;
+background: #DDD url("/champion/faces/javax.faces.resource/images/ui-bg_flat_50_dddddd_40x100.png?ln=primefaces-championtheme") 50% 50% repeat-x;
 }
 
 .ui-tabmenu ul {
 	width: 80% !important;
 	margin: 0 auto !important;
 	padding-left: 12px !important;
-	background: #F6A828
-		url("/champion/faces/javax.faces.resource/images/ui-bg_gloss-wave_35_f6a828_500x100.png?ln=primefaces-championtheme")
-		50% 50% repeat-x;
 }
 
 .widget-header {

@@ -22,7 +22,7 @@
 			<p:commandButton id="login" value="Bejelentkezés" styleClass="formButtons" rendered="true"/>
 			<p:commandButton id="logout" value="Kijelentkezés" styleClass="formButtons" rendered="false"/>
 			
-			<p:overlayPanel for="login">
+			<p:overlayPanel for="login" widgetVar="loginPanel">
 				<p:panelGrid columns="2" style="margin: 15px; " >
 				<f:facet name="header">
 					<h:outputText value="Login"/>
@@ -36,33 +36,33 @@
 				
 				<f:facet name="footer">
 					<p:commandButton  value="OK" ajax="false" styleClass="formButtons"/>
-					<p:commandButton id="registration" value="Registration" styleClass="formButtons"></p:commandButton>
+					<p:commandButton id="registration" value="Registration" styleClass="formButtons" oncomplete="registrationDialog.show(), loginPanel.hide()"></p:commandButton>
 				</f:facet>
 			</p:panelGrid>
 			</p:overlayPanel>
 			
-			<p:overlayPanel for="registration">
+			<p:dialog widgetVar="registrationDialog" modal="true">
 				<p:panelGrid columns="2" style="margin: 15px; " >
-				<f:facet name="header">
-					<h:outputText value="Login"/>
-				</f:facet>
-				
-				<h:outputText value="Username:"/>
-				<p:inputText id="userReg" label="Username" maxlength="20" />
-				
-				<h:outputText value="Email"/>
-				<p:inputText id="emailReg" validatorMessage="Email is not valid!" maxlength="30">
-					<f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
-				</p:inputText>
-				
-				<h:outputText value="Password:"/>
-				<p:password id="passwordReg" label="Password" maxlength="20"/>
-				
-				<f:facet name="footer">
-					<p:commandButton  value="Register" ajax="false" styleClass="formButtons"/>
-				</f:facet>
-			</p:panelGrid>
-			</p:overlayPanel>
+					<f:facet name="header">
+						<h:outputText value="Login"/>
+					</f:facet>
+					
+					<h:outputText value="Username:"/>
+					<p:inputText id="userReg" label="Username" maxlength="20" />
+					
+					<h:outputText value="Email"/>
+					<p:inputText id="emailReg" validatorMessage="Email is not valid!" maxlength="30">
+						<f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
+					</p:inputText>
+					
+					<h:outputText value="Password:"/>
+					<p:password id="passwordReg" label="Password" maxlength="20"/>
+					
+					<f:facet name="footer">
+						<p:commandButton  value="Register" ajax="false" styleClass="formButtons"/>
+					</f:facet>
+				</p:panelGrid>
+			</p:dialog>
 		</div>
 		<div class="ui-widget-header widget-header">
 			Champion&amp;Pályázatok
