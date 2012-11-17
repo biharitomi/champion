@@ -9,13 +9,13 @@
 <ui:composition>
 		<div id="ui-login-mainMenu">
 			<p:tabMenu id="mainMenu" activeIndex="#{templateBean.tabMenuId}">
-						<p:menuitem id="indexMenuItem" value="Szolgáltatásaink" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
-						<p:menuitem id="referenciakMenuItem" value="Referenciák"  update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
-						<p:menuitem id="kapcsolatMenuItem" value="Kapcsolat" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
-						<p:menuitem id="dijakMenuItem" value="Díjak" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
-						<p:menuitem id="cegunkrolMenuItem" value="Cégünkről" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
-						<p:menuitem id="partnereinkMenuItem" value="Partnereink" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
-						<p:menuitem id="tevekenysegekMenuItem" value="Tevékenységek" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" styleClass="mainMenuItem"/>
+						<p:menuitem id="indexMenuItem" value="Szolgáltatásaink" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" />
+						<p:menuitem id="referenciakMenuItem" value="Referenciák"  update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" />
+						<p:menuitem id="kapcsolatMenuItem" value="Kapcsolat" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" />
+						<p:menuitem id="dijakMenuItem" value="Díjak" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" />
+						<p:menuitem id="cegunkrolMenuItem" value="Cégünkről" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" />
+						<p:menuitem id="partnereinkMenuItem" value="Partnereink" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" />
+						<p:menuitem id="tevekenysegekMenuItem" value="Tevékenységek" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" />
 			</p:tabMenu>
 		</div>
 		<div id="ui-login-group" class="ui-widget ui-widget-content ui-corner-all ui-widget-header">
@@ -51,7 +51,7 @@
 				<p:inputText id="userReg" label="Username" maxlength="20" />
 				
 				<h:outputText value="Email"/>
-				<p:inputText id="emailReg"  validatorMessage="Email is not valid!" maxlength="30">
+				<p:inputText id="emailReg" validatorMessage="Email is not valid!" maxlength="30">
 					<f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
 				</p:inputText>
 				
