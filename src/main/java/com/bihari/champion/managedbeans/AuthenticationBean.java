@@ -1,9 +1,12 @@
 package com.bihari.champion.managedbeans;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
+import org.primefaces.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -28,23 +31,29 @@ public class AuthenticationBean {
 
 	public void login() {
 		try {
-			Authentication request=new UsernamePasswordAuthenticationToken(userName, password);
+			Authentication request=new UsernamePasswordAuthenticationToken(this.userName, this.password);
 			Authentication result=am.authenticate(request);
 			SecurityContextHolder.getContext().setAuthentication(result);
 		} catch (BadCredentialsException e) {
-			e.printStackTrace();
+			RequestContext.getCurrentInstance().execute("loginPanel.show()");
+			FacesContext.getCurrentInstance().addMessage("loginErrorMessages", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Wrong username or password"));
+			logger.info("Login UNsuccessfully for "+this.userName);
 			return;
 		}
 		
+		getLoggedInUserFromSecurityContext();
+		logger.info("Login successfully for "+loggedInUserName);
+		this.isLoggedIn=true;
+		RequestContext.getCurrentInstance().execute("loginPanel.hide()");
+	}
+
+	private void getLoggedInUserFromSecurityContext() {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		if (principal instanceof UserDetails) {
 			this.loggedInUserName = ((UserDetails)principal).getUsername();
 		} else {
 			this.loggedInUserName = principal.toString();
 		}
-		logger.info("Login successfully for "+loggedInUserName);
-		
-		this.isLoggedIn=true;
 	}
 	
 	public void logout(){

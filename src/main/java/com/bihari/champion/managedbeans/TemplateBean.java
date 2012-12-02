@@ -42,6 +42,7 @@ public class TemplateBean implements Serializable {
 
 	public void menuItemClicked(ActionEvent event){
 		logger.info("MainMenu item clicked with component id: "+event.getComponent().getId());
+		
 		if(event.getComponent().getId().equals(INDEX_MENU_ITEM_ID)){
 			this.tabMenuId=0;
 			this.returnUrl="/index";

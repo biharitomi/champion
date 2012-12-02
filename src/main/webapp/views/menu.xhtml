@@ -10,7 +10,7 @@
 	<div id="ui-widget-menus">
 		<div id="ui-login-mainMenu">
 			<p:tabMenu id="mainMenu" activeIndex="#{templateBean.tabMenuId}">
-						<p:menuitem id="indexMenuItem" value="Szolgáltatásaink" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" />
+						<p:menuitem id="indexMenuItem" value="Szolgáltatásaink" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true"/>
 						<p:menuitem id="referenciakMenuItem" value="Referenciák"  update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" />
 						<p:menuitem id="kapcsolatMenuItem" value="Kapcsolat" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" />
 						<p:menuitem id="dijakMenuItem" value="Díjak" update=":dataForm:data" actionListener="#{templateBean.menuItemClicked}" action="#{templateBean.returnAction}" ajax="true" />
@@ -21,10 +21,11 @@
 		</div>
 		<div id="ui-login-group" class="ui-corner-all">
 			<p:commandButton id="login" value="Bejelentkezés" styleClass="formButtons" rendered="#{!authBean.isLoggedIn}"/>
-<!-- 			<h:outputLabel style="color:white; font-size:14px;" id="nameOfLoggedInUser" rendered="#{authBean.isLoggedIn}" value="Üdv, #{authBean.loggedInUserName}" /> -->
+			<h:outputText id="labelOfLoggedInUser" styleClass="labelOfLoggedInUser" rendered="#{authBean.isLoggedIn}" value="Üdv, #{authBean.loggedInUserName}!" />
 			<p:commandButton id="logout" value="Kijelentkezés" styleClass="formButtons" rendered="#{authBean.isLoggedIn}" actionListener="#{authBean.logout}" ajax="true" update="@form"/>
 			
 			<p:overlayPanel for="login" widgetVar="loginPanel">
+				<p:messages id="loginErrorMessages" showDetail="true" autoUpdate="true" closable="true" /> 
 				<p:panelGrid columns="2" style="margin: 15px; " >
 				<f:facet name="header">
 					<h:outputText value="Login"/>
@@ -37,7 +38,7 @@
 				<p:password id="passwordLogin" label="Password" maxlength="20" value="#{authBean.password}"/>
 				
 				<f:facet name="footer">
-					<p:commandButton  value="OK" ajax="false" styleClass="formButtons" actionListener="#{authBean.login}"/>
+					<p:commandButton  value="OK" ajax="true" styleClass="formButtons" actionListener="#{authBean.login}" update="@form"/>
 					<p:commandButton id="registration" value="Registration" styleClass="formButtons" oncomplete="registrationDialog.show(), loginPanel.hide()"></p:commandButton>
 				</f:facet>
 			</p:panelGrid>
