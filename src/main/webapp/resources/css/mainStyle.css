@@ -77,10 +77,13 @@ p,ul {
 	text-align: center;
 	font: bold 230%/100% "Lucida Grande";
 	text-transform: capitalize;
+	color: black;
 	padding: 10px;
-	/* 	background:#c4c4c4 linear-gradient(top, rgba(255,255,255,0.8), rgba(255,255,255,0)); */
-	/* 	background:#c4c4c4 -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.8)), to(rgba(255,255,255,0))); */
-	/* 	background:#c4c4c4 -moz-linear-gradient(top, rgba(255,255,255,0.8), rgba(255,255,255,0)); */
+/* 		background-image:#c4c4c4 linear-gradient(top, rgba(255,255,255,0.8), rgba(255,255,255,0)); */
+/* 		background-image:#c4c4c4 -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.8)), to(rgba(255,255,255,0))); */
+/* 		background-image:#c4c4c4 -moz-linear-gradient(top, rgba(255,255,255,0.8), rgba(255,255,255,0)); */
+	
+/* 	background-image: -webkit-gradient(linear, 0% 0%, 0% 80%, from(#AEB092), to(#171910)); */
 	/* IE10 Consumer Preview */
 	background-image: -ms-linear-gradient(left, #FFFFFF 0%, #1F393D 100%);
 	/* Mozilla Firefox */
@@ -132,3 +135,4 @@ p,ul {
 	border-color: #252525 !important;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222',endColorstr='#ff111111', GradientType=0 ) !important;
 }
+

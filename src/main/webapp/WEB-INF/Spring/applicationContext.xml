@@ -12,7 +12,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	
 	<context:component-scan base-package="com.bihari.champion"></context:component-scan>
-	
+
 	<sec:global-method-security secured-annotations="enabled" />
 	
 	<sec:http auto-config="true">
@@ -21,7 +21,7 @@
 		<sec:form-login login-page="/faces/index.xhtml" />
 	</sec:http>
 	
-	<sec:authentication-manager>
+	<sec:authentication-manager alias="authenticationManager">
     <sec:authentication-provider>
       <sec:user-service>
         <sec:user name="jimi" password="pass" authorities="ROLE_USER, ROLE_ADMIN" />

@@ -20,8 +20,9 @@
 			</p:tabMenu>
 		</div>
 		<div id="ui-login-group" class="ui-corner-all">
-			<p:commandButton id="login" value="Bejelentkezés" styleClass="formButtons" rendered="true"/>
-			<p:commandButton id="logout" value="Kijelentkezés" styleClass="formButtons" rendered="false"/>
+			<p:commandButton id="login" value="Bejelentkezés" styleClass="formButtons" rendered="#{!authBean.isLoggedIn}"/>
+<!-- 			<h:outputLabel style="color:white; font-size:14px;" id="nameOfLoggedInUser" rendered="#{authBean.isLoggedIn}" value="Üdv, #{authBean.loggedInUserName}" /> -->
+			<p:commandButton id="logout" value="Kijelentkezés" styleClass="formButtons" rendered="#{authBean.isLoggedIn}" actionListener="#{authBean.logout}" ajax="true" update="@form"/>
 			
 			<p:overlayPanel for="login" widgetVar="loginPanel">
 				<p:panelGrid columns="2" style="margin: 15px; " >
@@ -30,13 +31,13 @@
 				</f:facet>
 				
 				<h:outputText value="Username:"/>
-				<p:inputText id="userLogin" label="Username" maxlength="20" />
+				<p:inputText id="userLogin" label="Username" maxlength="20" value="#{authBean.userName}"/>
 				
 				<h:outputText value="Password:"/>
-				<p:password id="passwordLogin" label="Password" maxlength="20"/>
+				<p:password id="passwordLogin" label="Password" maxlength="20" value="#{authBean.password}"/>
 				
 				<f:facet name="footer">
-					<p:commandButton  value="OK" ajax="false" styleClass="formButtons"/>
+					<p:commandButton  value="OK" ajax="false" styleClass="formButtons" actionListener="#{authBean.login}"/>
 					<p:commandButton id="registration" value="Registration" styleClass="formButtons" oncomplete="registrationDialog.show(), loginPanel.hide()"></p:commandButton>
 				</f:facet>
 			</p:panelGrid>
