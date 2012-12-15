@@ -31,15 +31,15 @@
 					<h:outputText value="Login"/>
 				</f:facet>
 				
-				<h:outputText value="Username:"/>
-				<p:inputText id="userLogin" label="Username" maxlength="20" value="#{authBean.userName}"/>
+				<h:outputText value="Felhasználó név:"/>
+				<p:inputText id="userLogin" label="Felhasználó név" maxlength="20" value="#{authBean.userName}"/>
 				
-				<h:outputText value="Password:"/>
-				<p:password id="passwordLogin" label="Password" maxlength="20" value="#{authBean.password}"/>
+				<h:outputText value="Jelszó:"/>
+				<p:password id="passwordLogin" label="Jelszó" maxlength="20" value="#{authBean.password}"/>
 				
 				<f:facet name="footer">
 					<p:commandButton  value="OK" ajax="true" styleClass="formButtons" actionListener="#{authBean.login}" update="@form"/>
-					<p:commandButton id="registration" value="Registration" styleClass="formButtons" oncomplete="registrationDialog.show(), loginPanel.hide()"></p:commandButton>
+					<p:commandButton id="registration" value="Regisztráció" styleClass="formButtons" oncomplete="registrationDialog.show(), loginPanel.hide()"></p:commandButton>
 				</f:facet>
 			</p:panelGrid>
 			</p:overlayPanel>
@@ -48,26 +48,26 @@
 				<f:facet name="header"><h:outputText value="Registration"/></f:facet>
 				<p:messages id="registrationMessages" showDetail="true" autoUpdate="true" closable="true" globalOnly="false"/>
 				<p:panelGrid columns="2" style="margin: 15px; " >
-					<h:outputText value="Username:"/>
-					<p:inputText id="userReg" label="Username" maxlength="20" title="Username" value="#{registrationBean.username}"/>
+					<h:outputText value="Felhasználó név:"/>
+					<p:inputText id="userReg" label="Felhasználó név" maxlength="20" title="Username" value="#{registrationBean.username}"/>
 					
-					<h:outputText value="Full name:"/>
-					<p:inputText id="fullNameReg" label="Full name" maxlength="20" value="#{registrationBean.fullName}"/>
+					<h:outputText value="Teljes név:"/>
+					<p:inputText id="fullNameReg" label="Teljes név" maxlength="20" value="#{registrationBean.fullName}"/>
 					
-					<h:outputText value="Email"/>
+					<h:outputText value="Email:"/>
 					<p:inputText id="emailReg" validatorMessage="Nem email címet adot meg!" maxlength="30" value="#{registrationBean.email}">
 						<f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
 					</p:inputText>
 					
-					<h:outputText value="Password:"/>
-					<p:password id="passwordReg" label="Password" maxlength="20" value="#{registrationBean.password}"/>
+					<h:outputText value="Jelszó:"/>
+					<p:password id="passwordReg" label="Jelszó" maxlength="20" value="#{registrationBean.password}"/>
 					
-					<h:outputText value="Re-Password:"/>
-					<p:password id="re_passwordReg" label="Re-Password" maxlength="20" value="#{registrationBean.passwordRe}"/>
+					<h:outputText value="Jelszó újra:"/>
+					<p:password id="re_passwordReg" label="Jelszó újra" maxlength="20" value="#{registrationBean.passwordRe}"/>
 					
 					<f:facet name="footer">
-						<p:commandButton  value="Register" ajax="true" styleClass="formButtons" actionListener="#{registrationBean.register}" update="@form"/>
-						<p:commandButton  value="Cancel" ajax="true" styleClass="formButtons" actionListener="#{registrationBean.cancelRegistration}" update="@form"/>
+						<p:commandButton  value="Regisztrálás" ajax="true" styleClass="formButtons" actionListener="#{registrationBean.register}" update="@form"/>
+						<p:commandButton  value="Mégse" ajax="true" styleClass="formButtons" actionListener="#{registrationBean.cancelRegistration}" update="@form"/>
 					</f:facet>
 				</p:panelGrid>
 			</p:dialog>

@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
 import org.slf4j.Logger;
@@ -37,6 +38,8 @@ public class TemplateBean implements Serializable {
 	}
 	
 	public TemplateBean(){
+//		String actUrl=FacesContext.getCurrentInstance().getViewRoot().getViewId();
+		logger.info(FacesContext.getCurrentInstance().getViewRoot().getViewId());
 		this.tabMenuId=0;
 	}
 
