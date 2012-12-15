@@ -1,5 +1,7 @@
 package com.bihari.champion.managedbeans;
 
+import java.io.Serializable;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -18,7 +20,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 @SessionScoped
 @ManagedBean(name = "authBean")
-public class AuthenticationBean {
+public class AuthenticationBean implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2836015231153043311L;
+
 	private static Logger logger=LoggerFactory.getLogger(AuthenticationBean.class);
 	
 	private String userName="";
@@ -36,7 +43,7 @@ public class AuthenticationBean {
 			SecurityContextHolder.getContext().setAuthentication(result);
 		} catch (BadCredentialsException e) {
 			RequestContext.getCurrentInstance().execute("loginPanel.show()");
-			FacesContext.getCurrentInstance().addMessage("loginErrorMessages", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Wrong username or password"));
+			FacesContext.getCurrentInstance().addMessage("passwordLogin", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Wrong username or password"));
 			logger.info("Login UNsuccessfully for "+this.userName);
 			return;
 		}
